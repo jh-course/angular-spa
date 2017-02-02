@@ -1,0 +1,11 @@
+<span class="found-list">
+</p>
+<h3>Found Menu Items</h3>
+<ol>
+  <li ng-repeat="item in narrowItDown.found">
+    {{ item.name }} : {{ item.short_name }} : {{ item.description }}
+    <button ng-click="narrowItDown.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ol>
+<div ng-if="narrowItDown.found.length === 0">Nothing found</div>
+</span>
