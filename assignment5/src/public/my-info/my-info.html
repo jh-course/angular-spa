@@ -1,0 +1,54 @@
+<div class="container">
+    <h2 id="my-info-title" class="text-center">
+        My Info
+    </h2>
+
+    <div ng-if="myInfoCtrl.isSignedUp()">
+        <table style="width:50%">
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <textarea rows="1" cols="20" readonly="readonly"
+                              placeholder="First Name" class="my-info-data">{{myInfoCtrl.user.firstname}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <textarea rows="1" cols="20" readonly="readonly"
+                              placeholder="Last Name" class="my-info-data">{{myInfoCtrl.user.lastname}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <textarea rows="1" cols="20" readonly="readonly"
+                              placeholder="Email" class="my-info-data">{{myInfoCtrl.user.email}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>
+                    <textarea rows="1" cols="20" readonly="readonly"
+                              placeholder="Phone" class="my-info-data">{{myInfoCtrl.user.phone}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite Menu Item</td>
+                <td>
+                    <textarea rows="1" cols="20" readonly="readonly"
+                              placeholder="Favorite Menu Item" class="my-info-data">{{myInfoCtrl.user.menuItemName}}</textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<span ng-if="!myInfoCtrl.isSignedUp()">
+  Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</span>
+<span ng-if="myInfoCtrl.isSignedUp()">
+  <br>
+  <menu-item menu-item="myInfoCtrl.user.menuItem"></menu-item>
+</span>
+
+</div>
